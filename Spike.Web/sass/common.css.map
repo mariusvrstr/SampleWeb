@@ -1,0 +1,12 @@
+﻿{
+	"version": 3,
+	"file": "common.css",
+	"sources": [
+		"common.scss",
+		"custom/_site.scss",
+		"custom/_structure.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "AACA,oBAAoB;ACDpB,UAAU,CAAC;EACP,OAAO,EAAE,IAAI,CAAC,GAAG;CADT;;ACAZ,aAAa,CAAC;EACR,UAAU,EAAE,IAAK;CADR",
+	"names": []
+}
