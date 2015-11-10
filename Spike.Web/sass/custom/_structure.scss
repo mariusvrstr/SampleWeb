@@ -2,3 +2,15 @@
       margin-top: 80px;
 }
 
+.custom-table div[class*='col-'] {
+    background-color: #ff6a00;
+    margin-top: 3px;
+    color: azure;
+    border: 2px solid #d9732a;
+}
+
+.center-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

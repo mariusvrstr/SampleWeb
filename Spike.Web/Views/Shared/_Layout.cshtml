@@ -9,22 +9,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Spikes - Sample Website</title>
+    <title>
+        @if (string.IsNullOrEmpty(ViewBag.Title)) {
+            Html.Raw("Sample Web");
+        }
+        else
+        {
+            Html.Raw(string.Format("Sample Web - {0}", ViewBag.Title));
+        }
+    </title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="~/sass/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="~/sass/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="~/sass/common.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="~/sass/common.min.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    @RenderSection("PageHeader", false)
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+@RenderSection("PageHeader", false)
 
 </head>
 
@@ -37,14 +44,13 @@
 
         @RenderBody()
 
-     </div>
-
-    <hr>
-
+    </div>
+     
     <!-- Footer -->
+    <hr />
     <footer>
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="row center-wrapper">
+            <div class="col-sm-offset-2 col-sm-8 col-lg-12">
                 <p>Copyright &copy; Sample Website 2014</p>
             </div>
         </div>
