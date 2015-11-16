@@ -126,9 +126,14 @@
       <DependentUpon>common.css</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\pages\Bootstrap.js" />
+    <Content Include="Scripts\knockout-3.3.0.debug.js" />
+    <Content Include="Scripts\knockout-3.3.0.js" />
+    <Content Include="Scripts\pages\bootstrap.js" />
+    <Content Include="Scripts\pages\crossSiteScripting.js" />
+    <Content Include="Scripts\pages\security.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -136,12 +141,15 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\CodeGenerator.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DangerousModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +234,8 @@
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Bootstrap\Index.cshtml" />
+    <Content Include="Views\Security\Index.cshtml" />
+    <Content Include="Views\Security\CrossSiteScripting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -233,10 +243,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

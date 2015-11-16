@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>Web Security</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container custom-table">
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4">
+            @Html.ActionLink("Cross-site Scripting (XSS)", "CrossSiteScripting", "Security")            
+        </div>
+
+        <div class="col-sm-offset-1 col-sm-4">
+            Cross-frame Scripting (XFS)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4">
+            Error Handling
+        </div>
+
+        <div class="col-sm-offset-1 col-sm-4">
+            Brute Force
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-8">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://www.owasp.org/index.php/ASP.NET_Output_Encoding#Enhanced_Encoding">.NET Content Encoding</a></li>
+                <li><a href="https://msdn.microsoft.com/en-us/library/hh882339(v=vs.110).aspx">.NET HTTP Request Validation</a></li>
+                <li><a href="http://www.mvvm.ro/2011/03/sanitize-strings-against-sql-injection.html">RegEx: SQL Injection</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+

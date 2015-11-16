@@ -1,0 +1,64 @@
+﻿@model Spike.Web.Models.DangerousModel
+@{
+    ViewBag.Title = "CrossSiteScripting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Scripts {
+
+<script src="~/Scripts/pages/crossSiteScripting.js"></script>
+
+<script>
+
+    $().ready(function () {
+
+
+        spike.page.links.getDangerLink = '@Url.Action("GetDangerousCode", "Security")';
+
+        spike.page.viewModel = spike.page.createViewModel();
+        ko.applyBindings(spike.page.viewModel);
+
+    });
+    
+
+</script>
+
+}
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>Cross Site Scripting</h2>
+
+            <h3>Dangerouse SQL</h3>
+            @Model.DangerouseSQLCode
+
+            <h3>Dangerouse HTML</h3>
+            @Model.DangerouseHTMLCode
+
+            <h3>Dangerouse JavaScript</h3>
+            @Model.DangerouseJavaScript
+
+            <hr />
+            <p>Check Knockout AJAX Replacements</p>
+            <input id="getDataButton" type="button" value="Update JSON Values Below" data-bind="click: getData" />
+
+            <h3>Dangerouse HTML in SPAN</h3>
+            <span data-bind="text: htmlData"></span>
+
+            <h3>Dangerouse HTML in Text Box</h3>
+            <input data-bind="value: jsData" type="text" value="" />
+
+            <h3>Dangerouse JavaScript in SPAN</h3>
+            <span data-bind="text: jsData"></span>
+
+            <h3>Dangerouse JavaScript in Text Box</h3>
+            <input data-bind="value: jsData" type="text" value="" />
+
+        </div>
+    </div>
+
+</div>
