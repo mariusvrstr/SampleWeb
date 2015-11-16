@@ -236,6 +236,7 @@
     <Content Include="Views\Bootstrap\Index.cshtml" />
     <Content Include="Views\Security\Index.cshtml" />
     <Content Include="Views\Security\CrossSiteScripting.cshtml" />
+    <Content Include="Views\Security\_DangerousReplacement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

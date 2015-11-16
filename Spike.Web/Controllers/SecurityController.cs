@@ -37,5 +37,17 @@ namespace Spike.Web.Controllers
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetDangerousReplacementCode()
+        {
+            var model = new DangerousModel
+            {
+                DangerouseHTMLCode = CodeGenerator.GetDangerouseHtmlString(),
+                DangerouseSQLCode = CodeGenerator.GetDangerouseSqlString(),
+                DangerouseJavaScript = CodeGenerator.GetDangerouseJavaScriptString()
+            };
+
+            return PartialView("_DangerousReplacement", model);
+        }
     }
 }

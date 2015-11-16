@@ -21,12 +21,23 @@ spike.page.dataAccess = function () {
 
     };
 
+    var onGetDangerousReplacementSuccess = function (serverData) {
+        console.log(serverData);
+
+        $('#ReplaceHolder').html(serverData);
+    };
+
     var getData = function () {
         spike.ajax.submitAjaxRequest(spike.page.links.getDangerLink, {}, onGetDangerousSuccess);
     };
 
+    var getReplacement = function () {
+        spike.ajax.submitAjaxPartialRequest(spike.page.links.getDangerReplacementLink, {}, onGetDangerousReplacementSuccess);
+    }
+
     return {
-        getData: getData
+        getData: getData,
+        getReplacement: getReplacement
     }
 }();
 
@@ -39,6 +50,7 @@ spike.page.createViewModel = function () {
     
     return {
         getData: spike.page.dataAccess.getData,
+        getReplacement: spike.page.dataAccess.getReplacement,
         htmlData: htmlData,
         jsData: jsData
     }

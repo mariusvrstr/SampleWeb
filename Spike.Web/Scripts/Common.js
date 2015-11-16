@@ -23,6 +23,24 @@ spike.ajax = function () {
         $.get(targetUrl, successCallback);
     }
 
+    var submitAjaxPartialRequest = function (targetURL, jsonData, successCallback, failureCallback) {
+        var jsonString = JSON.stringify(jsonData);
+
+        if (failureCallback == undefined) {
+            failureCallback = defaultErrorFunction;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: targetURL,
+            data: jsonString,
+            success: successCallback,
+            error: failureCallback,
+            contentType: "application/json",
+            dataType: "html"
+        });
+    }
+
     var submitAjaxRequest = function (targetURL, jsonData, successCallback, failureCallback) {
 
         var jsonString = JSON.stringify(jsonData);
@@ -44,6 +62,7 @@ spike.ajax = function () {
 
     return {
         submitAjaxGetRequest: submitAjaxGetRequest,
-        submitAjaxRequest: submitAjaxRequest
+        submitAjaxRequest: submitAjaxRequest,
+        submitAjaxPartialRequest: submitAjaxPartialRequest
     }
 }();
