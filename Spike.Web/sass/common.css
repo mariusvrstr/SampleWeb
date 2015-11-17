@@ -3,6 +3,11 @@
   padding: 30px 5px;
 }
 
+.has-error {
+  color: red;
+  font-size: 1.2em;
+}
+
 .page-content {
   margin-top: 80px;
 }

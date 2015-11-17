@@ -34,30 +34,57 @@
         <div class="col-sm-offset-2 col-sm-8">
             <h2>Cross Site Scripting</h2>
 
-            <h3>Dangerouse SQL</h3>
-            @Model.DangerouseSQLCode
+            <p>The only methods that allows for XSS below is when using HTML.Raw()</p>
 
-            <h3>Dangerouse HTML</h3>
-            @Model.DangerouseHTMLCode
+            <fieldset>
+                <legend>HTML RAW</legend>
 
-            <h3>Dangerouse JavaScript</h3>
-            @Model.DangerouseJavaScript
+                <p>Check vulniribility when using HTML.Raw()</p>
 
-            <hr />
-            <p>Check Knockout AJAX Replacements</p>
-            <input type="button" value="Update JSON Values Below" data-bind="click: getData" />
+                <h3 class="has-error">Dangerouse HTML RAW in SPAN</h3>
+                <span>@Html.Raw(Model.DangerouseHTMLCode)</span>
 
-            <h3>Dangerouse HTML in SPAN</h3>
-            <span data-bind="text: htmlData"></span>
+                <h3 class="has-error">Dangerouse JavaScript HTML RAW in SPAN</h3>
+                <span>@Html.Raw(Model.DangerouseJavaScript)</span>
 
-            <h3>Dangerouse JavaScript in SPAN</h3>
-            <span data-bind="text: jsData"></span>
+            </fieldset>
 
-            <hr />
-            <p>Check MVC Ajax DIV Replacements</p>
-            <input type="button" value="Replace DIV from JSON below" data-bind="click: getReplacement" />
+            <fieldset>
+                <legend>From RazorView Model @@</legend>
 
-            <div id="ReplaceHolder"></div>
+                <h3>Dangerouse SQL</h3>
+                @Model.DangerouseSQLCode
+
+                <h3>Dangerouse HTML</h3>
+                @Model.DangerouseHTMLCode
+
+                <h3>Dangerouse JavaScript</h3>
+                @Model.DangerouseJavaScript
+
+            </fieldset>
+            
+            <fieldset>
+                <legend>Knockout JS Binding</legend>
+
+                <p>Check Knockout AJAX Replacements</p>
+                <input type="button" value="Update JSON Values Below" data-bind="click: getData" />
+
+                <h3>Dangerouse HTML in SPAN</h3>
+                <span data-bind="text: htmlData"></span>
+
+                <h3>Dangerouse JavaScript in SPAN</h3>
+                <span data-bind="text: jsData"></span>
+            </fieldset>                      
+
+            <fieldset>
+                <legend>Partial Razor View DIV replacement</legend>
+
+                <p>Check MVC Ajax DIV Replacements</p>
+                <input type="button" value="Replace DIV from JSON below" data-bind="click: getReplacement" />
+
+                <div id="ReplaceHolder"></div>
+            </fieldset>
+                
 
         </div>
     </div>

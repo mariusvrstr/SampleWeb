@@ -12,7 +12,7 @@ namespace Spike.Web
 
         public static string GetDangerouseHtmlString()
         {
-            return "<input type='button' value='' onclick='javascript:alert('Cross Site Attacked!')'";
+            return @"<input type='button' value='Injected Button' onclick='javascript:alert(""Cross Site Attacked!"")' />";
         }
 
         public static string GetDangerouseJavaScriptString()
