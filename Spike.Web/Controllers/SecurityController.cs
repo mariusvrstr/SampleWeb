@@ -18,9 +18,9 @@ namespace Spike.Web.Controllers
         {
             var model = new DangerousModel
             {
-                DangerouseHTMLCode = CodeGenerator.GetDangerouseHtmlString(),
-                DangerouseSQLCode = CodeGenerator.GetDangerouseSqlString(),
-                DangerouseJavaScript = CodeGenerator.GetDangerouseJavaScriptString()
+                DangerousHTMLCode = CodeGenerator.GetDangerousHtmlString(),
+                DangerousSQLCode = CodeGenerator.GetDangerousSqlString(),
+                DangerousJavaScript = CodeGenerator.GetDangerousJavaScriptString()
             };
 
             return View(model);
@@ -30,9 +30,9 @@ namespace Spike.Web.Controllers
         {
             var model = new DangerousModel
             {
-                DangerouseHTMLCode = CodeGenerator.GetDangerouseHtmlString(),
-                DangerouseSQLCode = CodeGenerator.GetDangerouseSqlString(),
-                DangerouseJavaScript = CodeGenerator.GetDangerouseJavaScriptString()
+                DangerousHTMLCode = CodeGenerator.GetDangerousHtmlString(),
+                DangerousSQLCode = CodeGenerator.GetDangerousSqlString(),
+                DangerousJavaScript = CodeGenerator.GetDangerousJavaScriptString()
             };
 
             return Json(model, JsonRequestBehavior.AllowGet);
@@ -42,9 +42,9 @@ namespace Spike.Web.Controllers
         {
             var model = new DangerousModel
             {
-                DangerouseHTMLCode = CodeGenerator.GetDangerouseHtmlString(),
-                DangerouseSQLCode = CodeGenerator.GetDangerouseSqlString(),
-                DangerouseJavaScript = CodeGenerator.GetDangerouseJavaScriptString()
+                DangerousHTMLCode = CodeGenerator.GetDangerousHtmlString(),
+                DangerousSQLCode = CodeGenerator.GetDangerousSqlString(),
+                DangerousJavaScript = CodeGenerator.GetDangerousJavaScriptString()
             };
 
             return PartialView("_DangerousReplacement", model);

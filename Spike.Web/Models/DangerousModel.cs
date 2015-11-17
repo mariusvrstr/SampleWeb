@@ -5,10 +5,10 @@ namespace Spike.Web.Models
 
     public class DangerousModel
     {
-        public string DangerouseSQLCode { get; set; }
+        public string DangerousSQLCode { get; set; }
 
-        public string DangerouseHTMLCode { get; set; }
+        public string DangerousHTMLCode { get; set; }
 
-        public string DangerouseJavaScript { get; set; }
+        public string DangerousJavaScript { get; set; }
     }
 }

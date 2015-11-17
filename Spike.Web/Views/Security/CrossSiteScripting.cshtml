@@ -17,9 +17,12 @@
         spike.page.links.getDangerLink = '@Url.Action("GetDangerousCode", "Security")';
         spike.page.links.getDangerReplacementLink = '@Url.Action("GetDangerousReplacementCode", "Security")';
 
-        spike.page.viewModel = spike.page.createViewModel();
-        ko.applyBindings(spike.page.viewModel);
 
+        spike.page.viewModel = spike.page.createViewModel(@Html.Raw(Json.Encode(new {       
+                                         DangerousJavaScript = Model.DangerousJavaScript
+                                        })));
+
+        ko.applyBindings(spike.page.viewModel);
     });
     
 
@@ -41,25 +44,25 @@
 
                 <p>Check vulniribility when using HTML.Raw()</p>
 
-                <h3 class="has-error">Dangerouse HTML RAW in SPAN</h3>
-                <span>@Html.Raw(Model.DangerouseHTMLCode)</span>
+                <h3 class="has-error">Dangerous HTML RAW in SPAN</h3>
+                <span>@Html.Raw(Model.DangerousHTMLCode)</span>
 
-                <h3 class="has-error">Dangerouse JavaScript HTML RAW in SPAN</h3>
-                <span>@Html.Raw(Model.DangerouseJavaScript)</span>
+                <h3 class="has-error">Dangerous JavaScript HTML RAW in SPAN</h3>
+                <span>@Html.Raw(Model.DangerousJavaScript)</span>
 
             </fieldset>
 
             <fieldset>
                 <legend>From RazorView Model @@</legend>
 
-                <h3>Dangerouse SQL</h3>
-                @Model.DangerouseSQLCode
+                <h3>Dangerous SQL</h3>
+                @Model.DangerousSQLCode
 
-                <h3>Dangerouse HTML</h3>
-                @Model.DangerouseHTMLCode
+                <h3>Dangerous HTML</h3>
+                @Model.DangerousHTMLCode
 
-                <h3>Dangerouse JavaScript</h3>
-                @Model.DangerouseJavaScript
+                <h3>Dangerous JavaScript</h3>
+                @Model.DangerousJavaScript
 
             </fieldset>
             
@@ -69,11 +72,15 @@
                 <p>Check Knockout AJAX Replacements</p>
                 <input type="button" value="Update JSON Values Below" data-bind="click: getData" />
 
-                <h3>Dangerouse HTML in SPAN</h3>
+                <h3>Dangerous HTML in SPAN</h3>
                 <span data-bind="text: htmlData"></span>
 
-                <h3>Dangerouse JavaScript in SPAN</h3>
+                <h3>Dangerous JavaScript in SPAN</h3>
                 <span data-bind="text: jsData"></span>
+
+                <h3>Dangerous JavaScript in RAW</h3>
+                <span data-bind="text: rawJsData" ></span>
+
             </fieldset>                      
 
             <fieldset>

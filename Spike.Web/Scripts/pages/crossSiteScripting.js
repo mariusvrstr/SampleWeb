@@ -41,18 +41,20 @@ spike.page.dataAccess = function () {
     }
 }();
 
-spike.page.createViewModel = function () {
+spike.page.createViewModel = function (serverData) {
     console.log('Create View Model');
     console.log(spike.page.dataAccess.getData);
 
     var htmlData = ko.observable('Replace Me Text');
-    var jsData = ko.observable('Replace Me Text');
+    var jsData = ko.observable('Replace Me Text'); 
+    var rawJsData = ko.observable(serverData.DangerousJavaScript);
     
     return {
         getData: spike.page.dataAccess.getData,
         getReplacement: spike.page.dataAccess.getReplacement,
         htmlData: htmlData,
-        jsData: jsData
+        jsData: jsData,
+        rawJsData: rawJsData
     }
 }
 
