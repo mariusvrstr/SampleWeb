@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "CrossSiteScriptingNotAllowed";
+}
+
+@section Scripts {
+    <script>
+        
+        /* The JS That Reloads page to main frame on any attempt to load in IFrame */
+         if (top.location !== self.location) {
+            if (top.console != undefined) {
+                top.console.log('Warning! Not allowed to view this page in a IFrame, now reloading page as main.');
+            }
+            top.location = self.location.href;
+        } 
+
+    </script>
+}
+
+<h2>Cross Site Scripting Is Not Allowed</h2>
+<p>You should not be able to see this text in a IFrame. If attemted this will reload the window as parent.</p>

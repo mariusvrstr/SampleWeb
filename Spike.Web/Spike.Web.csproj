@@ -132,6 +132,7 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\pages\bootstrap.js" />
+    <Content Include="Scripts\pages\crossFrameScripting.js" />
     <Content Include="Scripts\pages\crossSiteScripting.js" />
     <Content Include="Scripts\pages\security.js" />
     <Content Include="Web.config" />
@@ -237,6 +238,10 @@
     <Content Include="Views\Security\Index.cshtml" />
     <Content Include="Views\Security\CrossSiteScripting.cshtml" />
     <Content Include="Views\Security\_DangerousReplacement.cshtml" />
+    <Content Include="Views\Security\CrossFrameScripting.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Security\CrossSiteScriptingAllowed.cshtml" />
+    <Content Include="Views\Security\CrossSiteScriptingNotAllowed.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

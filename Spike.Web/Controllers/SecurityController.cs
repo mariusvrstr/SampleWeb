@@ -7,6 +7,9 @@ using Spike.Web.Models;
 
 namespace Spike.Web.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SecurityController : Controller
     {
         public ActionResult Index()
@@ -24,6 +27,16 @@ namespace Spike.Web.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult CrossSiteScriptingAllowed()
+        {
+            return View();
+        }
+
+        public ActionResult CrossSiteScriptingNotAllowed()
+        {
+            return View();
         }
 
         public JsonResult GetDangerousCode()
@@ -49,5 +62,13 @@ namespace Spike.Web.Controllers
 
             return PartialView("_DangerousReplacement", model);
         }
+
+
+        public ActionResult CrossFrameScripting()
+        {
+            return View();
+        }
+
+  
     }
 }
