@@ -1,8 +1,6 @@
 ﻿
-namespace Spike.Web
+namespace Spike.Web.App_Data
 {
-    using System;
-    
     public static class CodeGenerator
     {
 	    public static string GetDangerousSqlString()

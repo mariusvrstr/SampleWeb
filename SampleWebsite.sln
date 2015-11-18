@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DE9FB8
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.Instrumentation", "Spike.Instrumentation\Spike.Instrumentation.csproj", "{AF6D1586-424E-4131-99D6-5CE0DB32F4B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{66099E37-4E60-4EE1-8371-5CA75C382A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66099E37-4E60-4EE1-8371-5CA75C382A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66099E37-4E60-4EE1-8371-5CA75C382A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF6D1586-424E-4131-99D6-5CE0DB32F4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6D1586-424E-4131-99D6-5CE0DB32F4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6D1586-424E-4131-99D6-5CE0DB32F4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6D1586-424E-4131-99D6-5CE0DB32F4B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

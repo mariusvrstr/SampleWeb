@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ErrorHandling.png" />
     <Content Include="Content\html5.png" />
     <Content Include="Content\mvc.png" />
     <Content Include="Content\responsive.png" />
@@ -142,9 +143,11 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\ErrorWriter.cs" />
     <Compile Include="App_Data\CodeGenerator.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
+    <Compile Include="Controllers\ErrorHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Global.asax.cs">
@@ -242,6 +245,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Security\CrossSiteScriptingAllowed.cshtml" />
     <Content Include="Views\Security\CrossSiteScriptingNotAllowed.cshtml" />
+    <Content Include="Views\ErrorHandling\Index.cshtml" />
+    <Content Include="Views\ErrorHandling\ThrowUnexpectedException.cshtml" />
+    <Content Include="Views\ErrorHandling\PageNotFound.cshtml" />
+    <Content Include="Views\ErrorHandling\GenericError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -249,7 +256,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.Instrumentation\Spike.Instrumentation.csproj">
+      <Project>{af6d1586-424e-4131-99d6-5ce0db32f4b0}</Project>
+      <Name>Spike.Instrumentation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

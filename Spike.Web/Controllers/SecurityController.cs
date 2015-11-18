@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Spike.Web.App_Data;
 using Spike.Web.Models;
 
 namespace Spike.Web.Controllers

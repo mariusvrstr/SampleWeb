@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts
+{
+    
+}
+
+<h2>Error Handling Section</h2>
+
+
+<ul>
+    <li>@Html.ActionLink("Simulate unhandled runtime exception", "ThrowUnexpectedException", "ErrorHandling")</li>
+    <li>@Html.ActionLink("Page not found", "PageNotFound", "ErrorHandling")</li>
+</ul>
+
+
+
+    
+

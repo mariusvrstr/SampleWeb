@@ -67,7 +67,21 @@
                 <h3>Security</h3>
                 <p>Essential Vulnerability checks.</p>
                 <p>
-                    @Html.ActionLink("Enter!", "Index", "Security", null, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Enter!", "Index", "Security", null, new {@class = "btn btn-primary"})
+                    <a href="#" class="btn btn-default">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img src="~/Content/ErrorHandling.png" alt="">
+            <div class="caption">
+                <h3>Error Handling</h3>
+                <p>Essential Vulnerability checks.</p>
+                <p>
+                    @Html.ActionLink("Enter!", "Index", "ErrorHandling", null, new { @class = "btn btn-primary" })
                     <a href="#" class="btn btn-default">More Info</a>
                 </p>
             </div>

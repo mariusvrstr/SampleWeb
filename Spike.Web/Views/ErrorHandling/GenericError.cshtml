@@ -1,0 +1,23 @@
+﻿@using Spike.Web.App_Data
+@model HandleErrorInfo
+@{
+    ViewBag.Title = "GenericError";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts
+{
+
+}
+
+
+<h2>An unexpected error has occurred. Please contact the system administrator.</h2>
+
+
+@if (Model != null && Model.Exception != null)
+{
+    <p>Error References @ErrorWriter.Error(Model.Exception)</p>
+}
+
+
+
