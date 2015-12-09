@@ -1,0 +1,62 @@
+﻿@model Spike.Web.Models.ContentDeliveryModel
+@{
+    ViewBag.Title = "ContentDelivery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+    <script src="~/Scripts/pages/razor.js"></script>
+
+    <script>
+
+        $().ready(function () {
+
+            var baseUrl = "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))";
+            spike.page.links.getJsonData = baseUrl + "Razor/GetJsonData";
+            spike.page.links.getHtmlData = baseUrl + "Razor/GetHtmlData";
+
+            spike.page.viewModel = spike.page.createViewModel(
+                @Html.Raw(Json.Encode(new {
+                    SectionTitle = Model.SectionTitel,
+                    MethodList = Model.Methods })));
+
+            ko.applyBindings(spike.page.viewModel);
+        });
+
+    </script>
+}
+
+<div>
+    <h1>@Model.PageName</h1>
+</div>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>Initial Server Data</h2>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>Get JSon Data</h2>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>Get HTML Data</h2>
+
+
+        </div>
+    </div>
+
+</div>

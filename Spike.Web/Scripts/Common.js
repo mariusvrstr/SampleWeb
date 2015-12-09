@@ -3,58 +3,87 @@ var spike = function () {
     var page = {}
     var ajax = {}
     var links = {}
-    var tools = {}
+    var utilities = {}
 
     return {
         page: page,
-        tools: tools,
+        utilities: utilities,
+        ajax: ajax,
         links: links
     }
 }();
 
-
 spike.ajax = function () {
-    var defaultErrorFunction = function (serverData) {
-        console.log(serverData);
-        alert("Server Request Failed");
-    };
+    var defaultErrorHandler = function (serverData) {
+        var readyState = (serverData != undefined && serverData.readyState) ? serverData.readyState : "None";
+        var status = (serverData != undefined && serverData.status) ? serverData.status : "None";
+        var message = (serverData != undefined && serverData.responseText) ? serverData.responseText : undefined;
 
-    var submitAjaxGetRequest = function (targetUrl, successCallback) {
-        $.get(targetUrl, successCallback);
+        if (message !== undefined && message !== null && message !== "") {
+
+            try {
+                var resultObject = $.parseJSON(message);
+                var redirectUrl = resultObject.RedirectUrl;
+
+                if (typeof (redirectUrl) !== "undefined") {
+                    spike.utilities.console.info("Server Exception. Redirecting to error page.");
+                    window.location = redirectUrl;
+                    return;
+                }
+            } catch (err) {
+            }
+        }
+
+        spike.utilities.console.error("Ajax error occurred: Ready State [" + readyState + "] Status [" + status + "] Message [" + ((message != undefined) ? message : "None") + "]");
+    }
+    
+    var generateSuccessRouteHandler = function (successCallback, url) {
+        spike.utilities.console.info("Successfull Ajax call. Destination = [" + ((url != undefined) ? url : "None") +"]");
+        return successCallback;
     }
 
-    var submitAjaxPartialRequest = function (targetURL, jsonData, successCallback, failureCallback) {
-        var jsonString = JSON.stringify(jsonData);
+    var generateFailureRouteHandler = function (failureCallback, url) {
+        var failureHandler = ((failureCallback == undefined) ? defaultErrorHandler : failureCallback);
 
-        if (failureCallback == undefined) {
-            failureCallback = defaultErrorFunction;
-        }
+        spike.utilities.console.info("Ajax call failed. Destination = [" + ((url != undefined) ? url : "None") + "]");
+        return failureHandler;
+    }
+
+    var submitAjaxGetRequest = function (targetUrl, successCallback) {
+        var successHandler = generateSuccessRouteHandler(successCallback, targetUrl);
+
+        $.get(targetUrl, successHandler);
+    }
+
+    var submitAjaxPartialRequest = function (targetUrl, jsonData, successCallback, failureCallback) {
+        var successHandler = generateSuccessRouteHandler(successCallback, targetUrl);
+        var failureHandler = generateFailureRouteHandler(failureCallback, targetUrl);
+
+        var jsonString = JSON.stringify(jsonData);
 
         $.ajax({
             type: "POST",
-            url: targetURL,
+            url: targetUrl,
             data: jsonString,
-            success: successCallback,
-            error: failureCallback,
+            success: successHandler,
+            error: failureHandler,
             contentType: "application/json",
             dataType: "html"
         });
     }
 
-    var submitAjaxRequest = function (targetURL, jsonData, successCallback, failureCallback) {
+    var submitAjaxRequest = function (targetUrl, jsonData, successCallback, failureCallback) {
+        var successHandler = generateSuccessRouteHandler(successCallback, targetUrl);
+        var failureHandler = generateFailureRouteHandler(failureCallback, targetUrl);
 
         var jsonString = JSON.stringify(jsonData);
 
-        if (failureCallback == undefined) {
-            failureCallback = defaultErrorFunction;
-        }
-
         $.ajax({
             type: "POST",
-            url: targetURL,
+            url: targetUrl,
             data: jsonString,
-            success: successCallback,
-            error: failureCallback,
+            success: successHandler,
+            error: failureHandler,
             contentType: "application/json",
             dataType: "json"
         });
@@ -65,4 +94,33 @@ spike.ajax = function () {
         submitAjaxRequest: submitAjaxRequest,
         submitAjaxPartialRequest: submitAjaxPartialRequest
     }
+}();
+
+spike.utilities = function() {
+    var innerConsole = function() {
+        var defaultLogger = function (msg) { };
+        var newConsole = (console == undefined) ? {} : console;
+
+        if (newConsole.log == undefined) {
+            newConsole.log = defaultLogger;
+        }
+
+        if (newConsole.info == undefined) {
+            newConsole.info = defaultLogger;
+        }
+
+        if (newConsole.warning == undefined) {
+            newConsole.warning = defaultLogger;
+        }
+
+        if (newConsole.error == undefined) {
+            newConsole.error = defaultLogger;
+        }
+
+        return newConsole;
+    }();
+
+    return {
+        console: innerConsole
+    };
 }();

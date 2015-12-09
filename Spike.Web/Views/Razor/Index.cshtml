@@ -1,10 +1,11 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Scripts {
-    <script src="~/Scripts/pages/security.js"></script>
+    <script src="~/Scripts/pages/razor.js"></script>
 }
 
 <div class="container">
@@ -17,24 +18,47 @@
     </div>
 </div>
 
-<div class="container custom-table">
-    <div class="row">
-        <div class="col-sm-offset-1 col-sm-4">
-            @Html.ActionLink("Cross-site Scripting (XSS)", "CrossSiteScripting", "Security")
-        </div>
 
-        <div class="col-sm-offset-1 col-sm-4">
-            @Html.ActionLink("Cross-frame Scripting (XFS)", "CrossFrameScripting", "Security")
-        </div>
-    </div>
+<div class="container">
 
     <div class="row">
-        <div class="col-sm-offset-1 col-sm-4">
-            Error Handling
-        </div>
-
-        <div class="col-sm-offset-1 col-sm-4">
-            Brute Force
+        <div class="col-sm-offset-2 col-sm-8">
+            <h2>MVC Content Delivery</h2>
         </div>
     </div>
 </div>
+
+<div class="container custom-table">
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4">
+            @Html.ActionLink("Content Delivery", "ContentDelivery", "Razor")            
+        </div>
+
+        <div class="col-sm-offset-1 col-sm-4">
+           --
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4">
+            --
+        </div>
+
+        <div class="col-sm-offset-1 col-sm-4">
+            --
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-8">
+            <h3>Resources</h3>
+
+            <ul>
+                <li>--</li>
+            </ul>
+        </div>
+    </div>
+</div>
+

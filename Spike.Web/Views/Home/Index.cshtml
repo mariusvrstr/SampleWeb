@@ -4,8 +4,7 @@
 }
 
 @section Scripts {
-    <script src="~/Scripts/pages/security.js"></script>
-
+    <script src="~/Scripts/pages/razor.js"></script>
 }
 
 <!-- Jumbotron Header -->
@@ -54,6 +53,7 @@
                 <h3>MVC Razorviews</h3>
                 <p>Razor view overview</p>
                 <p>
+                    @Html.ActionLink("Enter!", "Index", "Razor", null, new { @class = "btn btn-primary" })
                     <a href="#" class="btn btn-primary">Enter</a> <a href="#" class="btn btn-default">More Info</a>
                 </p>
             </div>
@@ -68,7 +68,7 @@
                 <p>Essential Vulnerability checks.</p>
                 <p>
                     @Html.ActionLink("Enter!", "Index", "Security", null, new {@class = "btn btn-primary"})
-                    <a href="#" class="btn btn-default">More Info</a>
+                    <a href="#" class="btn btn-primary">Enter</a> <a href="#" class="btn btn-default">More Info</a>
                 </p>
             </div>
         </div>

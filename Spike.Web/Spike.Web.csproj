@@ -135,6 +135,7 @@
     <Content Include="Scripts\pages\bootstrap.js" />
     <Content Include="Scripts\pages\crossFrameScripting.js" />
     <Content Include="Scripts\pages\crossSiteScripting.js" />
+    <Content Include="Scripts\pages\razor.js" />
     <Content Include="Scripts\pages\security.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -149,11 +150,14 @@
     <Compile Include="Controllers\BootstrapController.cs" />
     <Compile Include="Controllers\ErrorHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RazorController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContentDeliveryModel.cs" />
     <Compile Include="Models\DangerousModel.cs" />
+    <Compile Include="Models\Method.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +253,8 @@
     <Content Include="Views\ErrorHandling\ThrowUnexpectedException.cshtml" />
     <Content Include="Views\ErrorHandling\PageNotFound.cshtml" />
     <Content Include="Views\ErrorHandling\GenericError.cshtml" />
+    <Content Include="Views\Razor\Index.cshtml" />
+    <Content Include="Views\Razor\ContentDelivery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,6 +268,7 @@
       <Name>Spike.Instrumentation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

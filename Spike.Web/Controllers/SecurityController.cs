@@ -69,7 +69,5 @@ namespace Spike.Web.Controllers
         {
             return View();
         }
-
-  
     }
 }

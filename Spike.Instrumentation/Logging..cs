@@ -8,7 +8,6 @@ namespace Spike.Instrumentation
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-
         public static void Info(string msg)
         {
             Logger.Info(msg);
@@ -16,10 +15,15 @@ namespace Spike.Instrumentation
 
         public static Guid Error(string msg)
         {
-            var errorToken = Guid.NewGuid();
-            Logger.Info("{0} ErrorToken={1}", msg, errorToken);
+            var errorToken = NewErrorToken();
+            Logger.Error("{0} ErrorToken={1}", msg, errorToken);
 
             return errorToken;
+        }
+        
+        private static Guid NewErrorToken()
+        {
+            return new Guid();
         }
     }
 }
