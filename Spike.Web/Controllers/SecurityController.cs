@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Spike.Web.App_Data;
-using Spike.Web.Models;
-
-namespace Spike.Web.Controllers
+﻿namespace Spike.Web.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    using System.Web.Mvc;
+    using App_Data;
+    using Models;
+
     public class SecurityController : Controller
     {
         public ActionResult Index()
@@ -63,8 +56,7 @@ namespace Spike.Web.Controllers
 
             return PartialView("_DangerousReplacement", model);
         }
-
-
+        
         public ActionResult CrossFrameScripting()
         {
             return View();

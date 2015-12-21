@@ -85,6 +85,12 @@
     <Content Include="Content\ErrorHandling.png" />
     <Content Include="Content\html5.png" />
     <Content Include="Content\mvc.png" />
+    <Content Include="Content\Plugins\remodal\remodal-default-theme.css" />
+    <Content Include="Content\Plugins\remodal\remodal.css" />
+    <Content Include="Content\Plugins\remodal\remodal.js" />
+    <Content Include="Content\Plugins\toastr\toastr.min.css" />
+    <Content Include="Content\Plugins\toastr\toastr.min.css" />
+    <Content Include="Content\Plugins\toastr\toastr.min.js" />
     <Content Include="Content\responsive.png" />
     <Content Include="Content\security.jpg" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
@@ -144,12 +150,13 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\ErrorWriter.cs" />
     <Compile Include="App_Data\CodeGenerator.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ErrorHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ClientSideController.cs" />
     <Compile Include="Controllers\RazorController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,6 +164,7 @@
     </Compile>
     <Compile Include="Models\ContentDeliveryModel.cs" />
     <Compile Include="Models\DangerousModel.cs" />
+    <Compile Include="Models\TokenErrorModel.cs" />
     <Compile Include="Models\Method.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -255,6 +263,8 @@
     <Content Include="Views\ErrorHandling\GenericError.cshtml" />
     <Content Include="Views\Razor\Index.cshtml" />
     <Content Include="Views\Razor\ContentDelivery.cshtml" />
+    <Content Include="Views\Error\ApplicationError.cshtml" />
+    <Content Include="Views\ClientSide\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

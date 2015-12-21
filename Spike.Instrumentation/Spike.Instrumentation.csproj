@@ -45,7 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomLoggers\ServiceLogging.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LogFactory.cs" />
     <Compile Include="Logging..cs" />
+    <Compile Include="LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

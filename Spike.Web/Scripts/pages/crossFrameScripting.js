@@ -1,5 +1,5 @@
 ﻿
-spike.page = function () {
+Project.page = function () {
     var objectFactory = {};
     var dataAccess = {};
     var links = {};
@@ -12,17 +12,17 @@ spike.page = function () {
 }();
 
 
-spike.page.createViewModel = function () {
+Project.page.createViewModel = function () {
     var loadIFrame = function () {
         var frame = document.getElementById("frameHolder");
         var location = undefined;
 
-        console.log(spike.page.viewModel.iFrameOption);
+        console.log(Project.page.viewModel.iFrameOption);
 
-        if (spike.page.viewModel.iFrameOption() === "loadable") {
-            location = spike.page.links.allowedUrl;
-        } else if (spike.page.viewModel.iFrameOption() === "unloadable") {
-            location = spike.page.links.notAllowedUrl;
+        if (Project.page.viewModel.iFrameOption() === "loadable") {
+            location = Project.page.links.allowedUrl;
+        } else if (Project.page.viewModel.iFrameOption() === "unloadable") {
+            location = Project.page.links.notAllowedUrl;
         }
 
         if (location != undefined) {

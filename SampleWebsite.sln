@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{67DC4D73-888B-4857-A48A-0F6CAD67362B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation And Services", "1. Presentation And Services", "{67DC4D73-888B-4857-A48A-0F6CAD67362B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{21B7B7F6-1853-4C43-BA45-D57F56036053}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. DataAccess (DAL)", "3. DataAccess (DAL)", "{21B7B7F6-1853-4C43-BA45-D57F56036053}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{06CF4725-E105-41DB-A496-1368DEFC8AD0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Logic (BLL)", "2. Business Logic (BLL)", "{06CF4725-E105-41DB-A496-1368DEFC8AD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.Web", "Spike.Web\Spike.Web.csproj", "{66099E37-4E60-4EE1-8371-5CA75C382A5F}"
 EndProject

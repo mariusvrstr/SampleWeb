@@ -1,8 +1,5 @@
-﻿
-namespace Spike.Web.Models
+﻿namespace Spike.Web.Models
 {
-    using System;
-
     public class DangerousModel
     {
         public string DangerousSQLCode { get; set; }

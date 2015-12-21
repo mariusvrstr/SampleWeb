@@ -13,30 +13,25 @@
 
     $().ready(function () {
 
+        Project.page.links.getDangerLink = '@Url.Action("GetDangerousCode", "Security")';
+        Project.page.links.getDangerReplacementLink = '@Url.Action("GetDangerousReplacementCode", "Security")';
 
-        spike.page.links.getDangerLink = '@Url.Action("GetDangerousCode", "Security")';
-        spike.page.links.getDangerReplacementLink = '@Url.Action("GetDangerousReplacementCode", "Security")';
 
-
-        spike.page.viewModel = spike.page.createViewModel(@Html.Raw(Json.Encode(new {       
+        Project.page.viewModel = Project.page.createViewModel(@Html.Raw(Json.Encode(new {       
                                          DangerousJavaScript = Model.DangerousJavaScript
                                         })));
 
-        ko.applyBindings(spike.page.viewModel);
+        ko.applyBindings(Project.page.viewModel);
     });
     
-
 </script>
-
 }
-
 
 <div class="container">
 
     <div class="row">
         <div class="col-sm-offset-2 col-sm-8">
             <h2>Cross Site Scripting</h2>
-
             <p>The only methods that allows for XSS below is when using HTML.Raw()</p>
 
             <fieldset>

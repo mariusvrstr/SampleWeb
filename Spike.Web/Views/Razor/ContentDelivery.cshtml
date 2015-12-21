@@ -13,15 +13,15 @@
         $().ready(function () {
 
             var baseUrl = "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))";
-            spike.page.links.getJsonData = baseUrl + "Razor/GetJsonData";
-            spike.page.links.getHtmlData = baseUrl + "Razor/GetHtmlData";
+            Project.page.links.getJsonData = baseUrl + "Razor/GetJsonData";
+            Project.page.links.getHtmlData = baseUrl + "Razor/GetHtmlData";
 
-            spike.page.viewModel = spike.page.createViewModel(
+            Project.page.viewModel = Project.page.createViewModel(
                 @Html.Raw(Json.Encode(new {
-                    SectionTitle = Model.SectionTitel,
+                    Model.SectionTitle,
                     MethodList = Model.Methods })));
 
-            ko.applyBindings(spike.page.viewModel);
+            ko.applyBindings(Project.page.viewModel);
         });
 
     </script>

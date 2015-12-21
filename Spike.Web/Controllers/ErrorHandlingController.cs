@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Spike.Web.Controllers
+﻿namespace Spike.Web.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+
     public class ErrorHandlingController : Controller
     {
         public ActionResult Index()

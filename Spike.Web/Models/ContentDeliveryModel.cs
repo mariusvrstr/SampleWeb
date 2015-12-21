@@ -6,7 +6,7 @@
     {
         public string PageName { get; set; }
 
-        public string SectionTitel { get; set; }
+        public string SectionTitle { get; set; }
 
         public List<Method> Methods { get; set; }
     }

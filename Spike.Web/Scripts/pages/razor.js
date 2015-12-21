@@ -1,4 +1,4 @@
-﻿spike.page = function() {
+﻿Project.page = function() {
     var objectFactory = {};
     var dataAccess = {};
     var links = {};
@@ -10,7 +10,7 @@
     }
 }();
 
-spike.page.objectFactory = function () {
+Project.page.objectFactory = function () {
     var getClientMethod = function(item) {
         return {
             name: item.Name
@@ -27,18 +27,18 @@ spike.page.objectFactory = function () {
     };
 }();
 
-spike.page.createViewModel = function(serverData) {
-    spike.utilities.console.log(serverData);
+Project.page.createViewModel = function(serverData) {
+    Project.console.log(serverData);
 
     var sectionTitle = serverData.SectionTitle;
-    var methods = ko.observable(spike.page.objectFactory.getClientMethods(serverData.MethodList));
+    var methods = ko.observable(Project.page.objectFactory.getClientMethods(serverData.MethodList));
 
     var getAjaxJsonServerData = function() {
-        spike.page.console.error("getAjaxJsonServerData not implimented yet");
+        Project.page.console.error("getAjaxJsonServerData not implimented yet");
     };
 
     var getAjaxHtmlServerData = function () {
-        spike.page.console.error("getAjaxHtmlServerData not implimented yet");
+        Project.page.console.error("getAjaxHtmlServerData not implimented yet");
     };
 
     return {
@@ -49,7 +49,7 @@ spike.page.createViewModel = function(serverData) {
     }
 };
 
-spike.page.dataAccess = function() {
+Project.page.dataAccess = function() {
 
 
     return {

@@ -1,5 +1,4 @@
-﻿
-namespace Spike.Web.Controllers
+﻿namespace Spike.Web.Controllers
 {
     using System.Collections.Generic;
     using System.Web.Mvc;
@@ -17,7 +16,7 @@ namespace Spike.Web.Controllers
             var model = new ContentDeliveryModel
             {
                 PageName = "MVC Content Delivery",
-                SectionTitel = "Methods of content delivery",
+                SectionTitle = "Methods of content delivery",
                 Methods = new List<Method>()
                 {
                     new Method { Name = "Page Load" },
@@ -27,6 +26,23 @@ namespace Spike.Web.Controllers
             };
             
             return View(model);
+        }
+
+        public JsonResult GetJsonData()
+        {
+            var model = new ContentDeliveryModel
+            {
+                PageName = "MVC Content Delivery Updated",
+                SectionTitle = "Methods of content delivery Updated",
+                Methods = new List<Method>()
+                {
+                    new Method { Name = "Page Load 2" },
+                    new Method { Name = "AJAX JSon 2" },
+                    new Method { Name = "AJAX HTML 2" },
+                }
+            };
+
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
 }

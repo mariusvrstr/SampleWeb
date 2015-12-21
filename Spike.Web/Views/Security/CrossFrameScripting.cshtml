@@ -10,18 +10,15 @@
     <script src="~/Scripts/pages/crossFrameScripting.js"></script>
 
     <script>
-        
-
-
 
         $().ready(function () {
 
             var baseUrl = "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))";
-            spike.page.links.allowedUrl = baseUrl + "Security/CrossSiteScriptingAllowed";
-            spike.page.links.notAllowedUrl = baseUrl + "Security/CrossSiteScriptingNotAllowed";
+            Project.page.links.allowedUrl = baseUrl + "Security/CrossSiteScriptingAllowed";
+            Project.page.links.notAllowedUrl = baseUrl + "Security/CrossSiteScriptingNotAllowed";
 
-            spike.page.viewModel = spike.page.createViewModel();
-            ko.applyBindings(spike.page.viewModel);
+            Project.page.viewModel = Project.page.createViewModel();
+            ko.applyBindings(Project.page.viewModel);
         });
 
 
